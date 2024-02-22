@@ -11,73 +11,10 @@ In this tutorial, you will learn how to summarise, aggregate, and analyze text i
 
 ## Setup 
 
-To practice these skills, we will use a dataset that I have already collected from the Edinburgh Fringe Festival website. 
+To practice these skills, we will use a dataset that I have already collected from the Edinburgh Festivals Listings API.  The API provides open access to the listings of Edinburgh's 11 major festivals, including the data for the Edinburgh International Book Festival which we will be using. 
 
-You can try this out yourself too: to obtain these data, you must first obtain an API key. Instructions on how to do this are available at the [Edinburgh Fringe API page](https://api.edinburghfestivalcity.com/documentation/fringe_approval):
-
-![Alt Text](data/wordfreq/fringeapi.png)
+You can try this out yourself too: to obtain these data, you must first obtain a free API key. You can do this by [registering for an account on the Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/login).
 
 ##  Load data and packages 
 
 Before proceeding, we'll load the remaining packages we will need for this tutorial.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

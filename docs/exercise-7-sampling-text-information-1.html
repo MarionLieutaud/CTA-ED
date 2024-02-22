@@ -97,7 +97,7 @@
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<p>As ever, if you’re working on this document from your own computer (“locally”) you can download the Edinburgh Fringe data in the following way:</p>
+<p>As ever, if you’re working on this document from your own computer (“locally”) you can download the Book Festival data in the following way:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="exercise-7-sampling-text-information-1.html#cb5-1" aria-hidden="true" tabindex="-1"></a>edbfdata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://github.com/cjbarrie/CTA-ED/blob/main/data/wordfreq/edbookfestall.csv"</span></span></code></pre></div>
 <p>We’ll get the data into tidy format as before, tagging individual words for whether or not they appear in our dictionary of woman- and gender-related terms. One addition here is that we’re ascribing each event an individual ID, which will be useful in the next step.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">

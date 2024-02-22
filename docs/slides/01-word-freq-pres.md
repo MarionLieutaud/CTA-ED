@@ -118,7 +118,7 @@ bookdata %>%
 ![](images/mildigbooksfreq.png)
 </center>
 
-Running Your First Analysis: Edinburgh Book Festival
+Running Your First Analysis: Edinburgh International Book Festival
 ========================================================
 
 ```r
@@ -260,7 +260,7 @@ Check out:
 3. R4DS [chapter 14](https://r4ds.had.co.nz/strings.html#matching-patterns-with-regular-expressions)
 
 
-Back to the Fringe: computing counts
+Back to the Book Festival: computing counts
 ========================================================
 
 ```r
