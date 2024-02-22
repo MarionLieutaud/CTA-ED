@@ -11,11 +11,9 @@ In this tutorial, you will learn how to summarise, aggregate, and analyze text i
 
 ## Setup 
 
-To practice these skills, we will use a dataset that I have already collected from the Edinburgh Fringe Festival website. 
+To practice these skills, we will use a dataset that I have already collected from the Edinburgh Festivals Listings API.  The API provides open access to the listings of Edinburgh's 11 major festivals, including the data for the Edinburgh International Book Festival which we will be using.
 
-You can try this out yourself too: to obtain these data, you must first obtain an API key. Instructions on how to do this are available at the [Edinburgh Fringe API page](https://api.edinburghfestivalcity.com/documentation/fringe_approval):
-
-![Alt Text](data/wordfreq/fringeapi.png)
+You can try this out yourself too: to obtain these data, you must first obtain a free API key. You can do this by [registering for an account on the Edinburgh Festivals Listings API](https://api.edinburghfestivalcity.com/login).
 
 ##  Load data and packages 
 
@@ -29,7 +27,7 @@ library(readr) # more informative and easy way to import data
 library(babynames) #for gender predictions
 ```
 
-For this tutorial, we will be using data that I have pre-cleaned and provided in .csv format. The data come from the Edinburgh Book Festival API, and provide data for every event that has taken place at the Edinburgh Book Festival, which runs every year in the month of August, for nine years: 2012-2020. There are many questions we might ask of these data. In this tutorial, we will investigate the contents of each event, and the speakers at each event, to determine if there are any trends in gender representation over time.
+For this tutorial, we will be using data that I have pre-cleaned and provided in .csv format. The data come from the Edinburgh Festivals Listings API, and provide data for every event that has taken place at the Edinburgh International Book Festival, which runs every year in the month of August, for nine years: 2012-2020. There are many questions we might ask of these data. In this tutorial, we will investigate the contents of each event, and the speakers at each event, to determine if there are any trends in gender representation over time.
 
 The first task, then, is to read in these data. We can do this with the `read_csv()` function.
 
@@ -39,7 +37,7 @@ The `read_csv()` function takes the .csv file and loads it into the working envi
 edbfdata <- read_csv("data/wordfreq/edbookfestall.csv")
 ```
 
-If you're working on this document from your own computer ("locally") you can download the Edinburgh Fringe data in the following way:
+If you're working on this document from your own computer ("locally") you can download the Book Festival data in the following way:
 
 ```{r, eval = F}
 edbfdata <- read_csv("https://raw.githubusercontent.com/cjbarrie/RDL-Ed/main/02-text-as-data/data/edbookfestall.csv")
@@ -107,13 +105,13 @@ tidy_des <- evdes %>%
 
 ```
 
-## Back to the Fringe
+## Back to the Book Festival
 
 We see that the resulting dataset is large (~446k rows). This is because the above commands have first taken the events text, and has "mutated" it into a set of lower case character string. With the "unnest_tokens" function it has then taken each individual string and create a new column called "word" that contains each individual word contained in the event description texts.
 
 Some terminology is also appropriate here. When we tidy our text into this format, we often refer to these data structures as consisting of "documents" and "terms." This is because by "tokenizing" our text with the "unnest_tokens" functions we are generating a dataset with one term per row. 
 
-Here, our "documents" are the collection of descriptions for all events in each year at the Edinburgh Book Festival. The way in which we sort our text into "documents" depends on the choice of the individual researcher. 
+Here, our "documents" are the collection of descriptions for all events in each year at the Edinburgh International Book Festival. The way in which we sort our text into "documents" depends on the choice of the individual researcher.
 
 Instead of by year, we might have wanted to sort our text into "genre." Here, we have two genres: "Literature" and "Children." Had we done so, we would then have only two "documents," which contained all of the words included in the event descriptions for each genre. 
 
@@ -286,7 +284,7 @@ You don't necessarily have to follow each step of how I have done this---I inclu
 
 The <tt>babynames</tt> package. contains, for each year, the number of children born with a given name, as well as their sex. With this information, we can then calculate the total number of individuals with a given name born for each sex in a given year. 
 
-Given we also have the total number of babies born in total cross these records, we can denominate (divide) the sums for each name by the total number of births for each sex in each year. We can take this proportion as representing the probability that a given individual in our Edinburgh Fringe dataset is male or female. 
+Given we also have the total number of babies born in total cross these records, we can denominate (divide) the sums for each name by the total number of births for each sex in each year. We can take this proportion as representing the probability that a given individual in our Book Festival dataset is male or female.
 
 More information on the <tt>babynames</tt> package can be found [here](https://www.ssa.gov/oact/babynames/limits.html). 
 
@@ -345,7 +343,7 @@ head(totprops)
 
 ```
 
-Once we have our proportions for all names, we can then merge these back with the names of our artists from the Edinburgh Fringe Book Festival. We can then easily plot the proportion of artists at the Festival who are male versus female in each year of the Festival. 
+Once we have our proportions for all names, we can then merge these back with the names of our artists from the Edinburgh International Book Festival. We can then easily plot the proportion of artists at the Festival who are male versus female in each year of the Festival.
 
 ```{r}
 
@@ -364,7 +362,7 @@ ggplot(ednameprops, aes(x=year, fill = factor(sex))) +
 
 What can we conclude form this graph?
 
-Note that when we merged the proportions from th "babynames" data with our Edinburgh Fringe data we lost some observations. This is because some names in the Edinburgh Fringe data had no match in the "babynames" data. Let's look at the names that had no match:
+Note that when we merged the proportions from the "babynames" data with our Book Festival data we lost some observations. This is because some names in the Book Festival data had no match in the "babynames" data. Let's look at the names that had no match:
 
 ```{r}
 names1 <- ednameprops$name

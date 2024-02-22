@@ -126,8 +126,8 @@
 <h2>
 <span class="header-section-number">17.2</span> Setup<a class="anchor" aria-label="anchor" href="#setup-6"><i class="fas fa-link"></i></a>
 </h2>
-<p>To practice these skills, we will use a dataset that I have already collected from the Edinburgh Fringe Festival website.</p>
-<p>You can try this out yourself too: to obtain these data, you must first obtain an API key. Instructions on how to do this are available at the <a href="https://api.edinburghfestivalcity.com/documentation/fringe_approval">Edinburgh Fringe API page</a>:</p>
+<p>To practice these skills, we will use a dataset that I have already collected from the Edinburgh Festivals Listings API.  The API provides open access to the listings of Edinburgh's 11 major festivals, including the data for the Edinburgh International Book Festival which we will be using.</p>
+    <p>You can try this out yourself too: to obtain these data, you must first obtain a free API key. You can do this by <a href="https://api.edinburghfestivalcity.com/login">registering for an account on the Edinburgh Festivals Listings API</a>.</p>
 <div class="float">
 <img src="data/wordfreq/fringeapi.png" alt="Alt Text"><div class="figcaption">Alt Text</div>
 </div>
@@ -157,7 +157,7 @@
 ## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
 ## Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## • `` -&gt; `...1`</code></pre>
-<p>If you’re working on this document from your own computer (“locally”) you can download the Edinburgh Fringe data in the following way:</p>
+<p>If you're working on this document from your own computer ("locally") you can download the Book Festival data in the following way:</p>
 <div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">edbfdata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/cjbarrie/RDL-Ed/main/02-text-as-data/data/edbookfestall.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -235,7 +235,7 @@
 </div>
 <div id="back-to-the-fringe" class="section level2" number="17.6">
 <h2>
-<span class="header-section-number">17.6</span> Back to the Fringe<a class="anchor" aria-label="anchor" href="#back-to-the-fringe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.6</span> Back to the Book Festival<a class="anchor" aria-label="anchor" href="#back-to-the-fringe"><i class="fas fa-link"></i></a>
 </h2>
 <p>We see that the resulting dataset is large (~446k rows). This is because the above commands have first taken the events text, and has “mutated” it into a set of lower case character string. With the “unnest_tokens” function it has then taken each individual string and create a new column called “word” that contains each individual word contained in the event description texts.</p>
 <p>Some terminology is also appropriate here. When we tidy our text into this format, we often refer to these data structures as consisting of “documents” and “terms.” This is because by “tokenizing” our text with the “unnest_tokens” functions we are generating a dataset with one term per row.</p>
@@ -437,7 +437,7 @@
 <p>Unfortunately, this package no longer works with newer versions of R; fortunately, I have recreated it using the original “babynames” data, which comes bundled in the <tt>babynames</tt> package.</p>
 <p>You don’t necessarily have to follow each step of how I have done this—I include this information for the sake of completeness.</p>
 <p>The <tt>babynames</tt> package. contains, for each year, the number of children born with a given name, as well as their sex. With this information, we can then calculate the total number of individuals with a given name born for each sex in a given year.</p>
-<p>Given we also have the total number of babies born in total cross these records, we can denominate (divide) the sums for each name by the total number of births for each sex in each year. We can take this proportion as representing the probability that a given individual in our Edinburgh Fringe dataset is male or female.</p>
+<p>Given we also have the total number of babies born in total cross these records, we can denominate (divide) the sums for each name by the total number of births for each sex in each year. We can take this proportion as representing the probability that a given individual in our Book Festival dataset is male or female.</p>
 <p>More information on the <tt>babynames</tt> package can be found <a href="https://www.ssa.gov/oact/babynames/limits.html">here</a>.</p>
 <p>We first load the babynames package into the R environment as a data.frame object. Because the data.frame “babynames” is contained in the <tt>babynames</tt> package we can just call it as an object and store it with .</p>
 <p>This dataset contains names for all years over a period 1800–2019. The variable “n” represents the number of babies born with the given name and sex in that year, and the “prop” represents, according to the package materials accessible <a href="https://cran.r-project.org/web/packages/babynames/babynames.pdf">here</a>, “n divided by total number of applicants in that year, which means proportions are of people of that gender with that name born in that year.”</p>
@@ -503,7 +503,7 @@
 ## 4 Aabir         1      5 M    
 ## 5 Aabriella     1      5 F    
 ## 6 Aada          1      5 F</code></pre>
-<p>Once we have our proportions for all names, we can then merge these back with the names of our artists from the Edinburgh Fringe Book Festival. We can then easily plot the proportion of artists at the Festival who are male versus female in each year of the Festival.</p>
+<p>Once we have our proportions for all names, we can then merge these back with the names of our artists from the Edinburgh International Book Festival. We can then easily plot the proportion of artists at the Festival who are male versus female in each year of the Festival.</p>
 <div class="sourceCode" id="cb210"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ednameprops</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">totprops</span>, <span class="va">gendes</span>, by <span class="op">=</span> <span class="st">"name"</span><span class="op">)</span></span>
 <span></span>
@@ -517,7 +517,7 @@
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_abline</a></span><span class="op">(</span>slope<span class="op">=</span><span class="fl">0</span>, intercept<span class="op">=</span><span class="fl">0.5</span>,  col <span class="op">=</span> <span class="st">"black"</span>,lty<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="main_files/figure-html/unnamed-chunk-109-1.png" width="672"></div>
 <p>What can we conclude form this graph?</p>
-<p>Note that when we merged the proportions from th “babynames” data with our Edinburgh Fringe data we lost some observations. This is because some names in the Edinburgh Fringe data had no match in the “babynames” data. Let’s look at the names that had no match:</p>
+<p>Note that when we merged the proportions from th “babynames” data with our Book Festival data we lost some observations. This is because some names in the Book Festival data had no match in the “babynames” data. Let’s look at the names that had no match:</p>
 <div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">names1</span> <span class="op">&lt;-</span> <span class="va">ednameprops</span><span class="op">$</span><span class="va">name</span></span>
 <span><span class="va">names2</span> <span class="op">&lt;-</span> <span class="va">gendes</span><span class="op">$</span><span class="va">name</span></span>
@@ -598,7 +598,7 @@
 <li><a class="nav-link" href="#load-data-and-packages"><span class="header-section-number">17.3</span> Load data and packages</a></li>
 <li><a class="nav-link" href="#inspect-and-filter-data"><span class="header-section-number">17.4</span> Inspect and filter data</a></li>
 <li><a class="nav-link" href="#tidy-the-text"><span class="header-section-number">17.5</span> Tidy the text</a></li>
-<li><a class="nav-link" href="#back-to-the-fringe"><span class="header-section-number">17.6</span> Back to the Fringe</a></li>
+<li><a class="nav-link" href="#back-to-the-fringe"><span class="header-section-number">17.6</span> Back to the Book Festival</a></li>
 <li><a class="nav-link" href="#analyze-keywords"><span class="header-section-number">17.7</span> Analyze keywords</a></li>
 <li><a class="nav-link" href="#compute-aggregate-statistics"><span class="header-section-number">17.8</span> Compute aggregate statistics</a></li>
 <li><a class="nav-link" href="#plot-time-trends"><span class="header-section-number">17.9</span> Plot time trends</a></li>
