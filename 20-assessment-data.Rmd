@@ -10,7 +10,7 @@ We can access data from @osnabrugge_playing_2021 [here](https://dataverse.harvar
 
 To prepare these data, we can use the same code as used by the original authors:
 
-```{r}
+```{r, message = FALSE, warning=FALSE}
 library("ggplot2")
 library("plyr")
 library("gdata")
@@ -20,9 +20,11 @@ library("kableExtra")
 library("tidyverse")
 ```
 
+
 ```{r, eval= FALSE}
-## Prep Osnabrugge et al. 
-data = fread("/Users/cbarrie6/Dropbox/Teaching/Edinburgh/teaching/CTA_21-22/assessment/data/uk_data.csv", encoding="UTF-8")
+## Prep Osnabrugge et al. - after downloading the dataset (see instructions above), check where you have stored in on your computer and include the path to the data in the code below.
+# I have given you the example with the path on my own computer, but you will need to change it.
+data = fread("User/marionlieutaud/document/data/osnabrugge_uk_data.csv", encoding="UTF-8")
 
 
 data$date = as.Date(data$date)

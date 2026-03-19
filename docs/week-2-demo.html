@@ -131,20 +131,20 @@
 <code class="sourceCode R"><span><span class="va">lipsum_text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>text <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/stringi/man/stri_rand_lipsum.html">stri_rand_lipsum</a></span><span class="op">(</span><span class="fl">1</span>, start_lipsum <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">lipsum_text</span><span class="op">$</span><span class="va">text</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## [1] "Lorem ipsum dolor sit amet, sodales nunc torquent a hac risus mauris diam eu. Lobortis potenti nibh scelerisque cubilia mi egestas netus donec. Sodales inceptos pharetra ex nostra vehicula massa porttitor. Ligula habitant luctus amet dui ante mauris montes bibendum. Non consectetur leo. Ac aliquam egestas mi nec justo ante cras eu ut. Leo habitasse egestas. Aliquam accumsan facilisi phasellus vestibulum taciti in sed, posuere. Elementum parturient penatibus egestas id velit turpis pretium tincidunt placerat elementum consectetur facilisis. Primis accumsan tristique quam lorem nec. Litora diam duis metus nisl neque erat curabitur ac metus. Cras duis lacus malesuada pellentesque cubilia sed vulputate quam porta. Et at, in non sed turpis dui. Quam in ipsum feugiat bibendum pharetra orci convallis facilisi. Erat iaculis justo eu sociis sit sed, tempus penatibus dui. Neque conubia maximus in felis ullamcorper."</code></pre>
+<pre><code>## [1] "Lorem ipsum dolor sit amet, vestibulum est et conubia, nec. Ipsum venenatis, inceptos proin a eu velit molestie, eu egestas in molestie. Vitae eu sociosqu donec nec vel egestas platea urna sapien purus quis, massa. Congue nibh mauris mauris maximus est semper. Lacinia faucibus ut taciti maecenas a sem vestibulum in. Maximus quis conubia efficitur scelerisque consequat libero fringilla. Mauris non volutpat dictum quis aliquam eu interdum. Metus class interdum, sit curabitur, vestibulum tellus sit vel urna fermentum montes commodo. Dui viverra himenaeos at purus lacinia suspendisse nec a gravida penatibus. Feugiat imperdiet diam tortor ad non, finibus. Vel dictumst a inceptos cras felis porttitor consequat. Cubilia nibh ornare ornare, in gravida eget a montes nam non. Euismod diam, nascetur nostra ligula. Sed sed sed amet purus suscipit, quam. Mauris penatibus dolor."</code></pre>
 <p>We can then tokenize with the <code><a href="https://juliasilge.github.io/tidytext/reference/unnest_tokens.html">unnest_tokens()</a></code> function in <code>tidytext</code>.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tokens</span> <span class="op">&lt;-</span> <span class="va">lipsum_text</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://juliasilge.github.io/tidytext/reference/unnest_tokens.html">unnest_tokens</a></span><span class="op">(</span><span class="va">word</span>, <span class="va">text</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tokens</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##      word
-## 1   lorem
-## 2   ipsum
-## 3   dolor
-## 4     sit
-## 5    amet
-## 6 sodales</code></pre>
+<pre><code>##         word
+## 1      lorem
+## 2      ipsum
+## 3      dolor
+## 4        sit
+## 5       amet
+## 6 vestibulum</code></pre>
 <p>Now we’ll get some larger data, simulating 5000 observations (rows) of random Latin text strings.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## Varying total words example</span></span>
@@ -227,7 +227,7 @@ n
 lipsum
 </td>
 <td style="text-align:right;">
-72490
+74027
 </td>
 </tr>
 <tr>
@@ -235,7 +235,7 @@ lipsum
 more
 </td>
 <td style="text-align:right;">
-72490
+74027
 </td>
 </tr>
 <tr>
@@ -243,7 +243,7 @@ more
 words
 </td>
 <td style="text-align:right;">
-67728
+69259
 </td>
 </tr>
 <tr>
@@ -251,7 +251,7 @@ words
 sed
 </td>
 <td style="text-align:right;">
-17710
+17490
 </td>
 </tr>
 <tr>
@@ -259,7 +259,7 @@ sed
 in
 </td>
 <td style="text-align:right;">
-12638
+12420
 </td>
 </tr>
 </tbody>
@@ -431,7 +431,7 @@ is not a decimal digit.</li>
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Computational Text Analysis</strong>" was written by Marion Lieutaud. It was last built on 2026-03-17.</p>
+    <p>"<strong>Computational Text Analysis</strong>" was written by Marion Lieutaud. It was last built on 2026-03-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

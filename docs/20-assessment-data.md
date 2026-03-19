@@ -15,100 +15,18 @@ To prepare these data, we can use the same code as used by the original authors:
 library("ggplot2")
 library("plyr")
 library("gdata")
-```
-
-```
-## 
-## Attaching package: 'gdata'
-```
-
-```
-## The following object is masked from 'package:stats':
-## 
-##     nobs
-```
-
-```
-## The following object is masked from 'package:utils':
-## 
-##     object.size
-```
-
-```
-## The following object is masked from 'package:base':
-## 
-##     startsWith
-```
-
-``` r
 library("stringr")
 library("data.table")
-```
-
-```
-## 
-## Attaching package: 'data.table'
-```
-
-```
-## The following objects are masked from 'package:gdata':
-## 
-##     first, last
-```
-
-``` r
 library("kableExtra")
 library("tidyverse")
 ```
 
-```
-## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ tibble    3.3.0
-## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.4
-```
-
-```
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::arrange()     masks plyr::arrange()
-## ✖ dplyr::between()     masks data.table::between()
-## ✖ dplyr::combine()     masks gdata::combine()
-## ✖ purrr::compact()     masks plyr::compact()
-## ✖ dplyr::count()       masks plyr::count()
-## ✖ dplyr::desc()        masks plyr::desc()
-## ✖ dplyr::failwith()    masks plyr::failwith()
-## ✖ dplyr::filter()      masks stats::filter()
-## ✖ dplyr::first()       masks data.table::first(), gdata::first()
-## ✖ dplyr::group_rows()  masks kableExtra::group_rows()
-## ✖ lubridate::hour()    masks data.table::hour()
-## ✖ dplyr::id()          masks plyr::id()
-## ✖ lubridate::isoweek() masks data.table::isoweek()
-## ✖ purrr::keep()        masks gdata::keep()
-## ✖ dplyr::lag()         masks stats::lag()
-## ✖ dplyr::last()        masks data.table::last(), gdata::last()
-## ✖ lubridate::mday()    masks data.table::mday()
-## ✖ lubridate::minute()  masks data.table::minute()
-## ✖ lubridate::month()   masks data.table::month()
-## ✖ dplyr::mutate()      masks plyr::mutate()
-## ✖ lubridate::quarter() masks data.table::quarter()
-## ✖ dplyr::rename()      masks plyr::rename()
-## ✖ lubridate::second()  masks data.table::second()
-## ✖ dplyr::starts_with() masks tidyr::starts_with(), gdata::starts_with()
-## ✖ dplyr::summarise()   masks plyr::summarise()
-## ✖ dplyr::summarize()   masks plyr::summarize()
-## ✖ purrr::transpose()   masks data.table::transpose()
-## ✖ lubridate::wday()    masks data.table::wday()
-## ✖ lubridate::week()    masks data.table::week()
-## ✖ lubridate::yday()    masks data.table::yday()
-## ✖ lubridate::year()    masks data.table::year()
-## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-```
 
 
 ``` r
-## Prep Osnabrugge et al. 
-data = fread("/Users/cbarrie6/Dropbox/Teaching/Edinburgh/teaching/CTA_21-22/assessment/data/uk_data.csv", encoding="UTF-8")
+## Prep Osnabrugge et al. - after downloading the dataset (see instructions above), check where you have stored in on your computer and include the path to the data in the code below.
+# I have given you the example with the path on my own computer, but you will need to change it.
+data = fread("User/marionlieutaud/document/data/osnabrugge_uk_data.csv", encoding="UTF-8")
 
 
 data$date = as.Date(data$date)
