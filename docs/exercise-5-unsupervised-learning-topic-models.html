@@ -494,8 +494,8 @@
 <span><span class="va">documents</span> <span class="op">&lt;-</span> <span class="va">corp</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">30000</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co"># take a look at the document names</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">documents</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<pre><code>##  [1] "text22218" "text12785" "text21257" "text26507" "text7266"  "text4291" 
-##  [7] "text11558" "text2924"  "text28374" "text9899"</code></pre>
+<pre><code>##  [1] "text4012"  "text9939"  "text12303" "text12323" "text13329" "text4338" 
+##  [7] "text3588"  "text6913"  "text22058" "text19289"</code></pre>
 <p>And now we are ready to preprocess in different ways. Here, we are including n-grams so we are preprocessing the text in 128 different ways. This takes about ten minutes to run on a machine with 8GB RAM.</p>
 <div class="sourceCode" id="cb361"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">preprocessed_documents</span> <span class="op">&lt;-</span> <span class="fu">factorial_preprocessing</span><span class="op">(</span></span>

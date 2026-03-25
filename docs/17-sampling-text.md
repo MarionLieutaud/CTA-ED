@@ -104,7 +104,7 @@ search_results <- dataverse_search("corpus politics text", type = "dataset", per
 ```
 
 ```
-## 10 of 51975 results retrieved
+## 10 of 51977 results retrieved
 ```
 
 ``` r
@@ -156,27 +156,13 @@ There are, of course, many other sources you might go to for text information. I
 
 In order to use the YouTube API, we'll first need to get our authorization token. These can be obtained by anybody, with or without an academic profile (i.e., unlike `academictwitteR`) in previous worksheets.
 
+It used to be very straightforward to set up a Youtube API, but now it is much more complicated.
+
 In order to get you authorization credentials, you can follow this [guide](https://developers.google.com/youtube/v3/getting-started). You will need to have an account on the Google Cloud console in order to do this. The main three steps are to:
 
 1.  create a "Project" on the Google Cloud console;
 2.  to associate the YouTube API with this Project;
 3.  to enable the API keys for the API
-
-Once you have created a Project (here: called "tuberalt1" in my case) you will see a landing screen like this.
-
-![](data/sampling/Screenshot 2022-10-31 at 14.59.25.jpg)
-
-We can then get our credentials by navigating to the menu on the left hand side and selecting credentials:
-
-![](data/sampling/Screenshot 2022-10-31 at 14.59.41.jpg)
-
-Now we click on the name of our project ("tuberalt1") and we will be taken to a page containing two pieces of information: our "client ID" and "client secret". 
-
-![](data/sampling/Screenshot 2023-03-15 at 15.55.31.png)
-
-The client ID is referred to below as our "app ID" in the `tuber` packaage and the client secret is our "app secret" mentioned in the `tuber` package.
-
-![](data/sampling/Screenshot 2023-03-15 at 15.55.45.png)
 
 Once we have our credentials, we can log them in our R environment with the `yt_oauth` function in the `tuber` package. This function takes two arguments: an "app ID" and an "app secret". Both of these will be provided to you once you have associated the YouTube API with your Google Cloud console project.
 
