@@ -1,7 +1,7 @@
 ---
 title: "Computational Text Analysis"
 author: "Marion Lieutaud"
-date: "2026-03-19"
+date: "2026-03-25"
 site: bookdown::bookdown_site
 output: bookdown::bs4_book
 documentclass: book

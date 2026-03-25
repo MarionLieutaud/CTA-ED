@@ -104,7 +104,7 @@ search_results <- dataverse_search("corpus politics text", type = "dataset", per
 ```
 
 ```
-## 10 of 51949 results retrieved
+## 10 of 51975 results retrieved
 ```
 
 ``` r
@@ -227,8 +227,10 @@ It seems YouTube recommends us back a lot of videos relating to Jordan Peterson.
 ### Other APIs (R packages)
 
 - [https://cran.r-project.org/web/packages/manifestoR/index.html](https://cran.r-project.org/web/packages/manifestoR/index.html)
-- [https://cran.r-project.org/web/packages/academictwitteR/index.html](https://cran.r-project.org/web/packages/academictwitteR/index.html)
 - [https://cran.r-project.org/web/packages/vkR/vkR.pdf](https://cran.r-project.org/web/packages/vkR/vkR.pdf)
+
+Example of defunct API: Twitter and the AcademicTwitter package
+- [https://cran.r-project.org/web/packages/academictwitteR/index.html](https://cran.r-project.org/web/packages/academictwitteR/index.html)
 
 ## Scraping
 

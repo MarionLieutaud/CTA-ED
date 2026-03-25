@@ -500,8 +500,8 @@ print(names(documents[1:10]))
 ```
 
 ```
-##  [1] "text25573" "text11885" "text521"   "text18152" "text25325" "text10030"
-##  [7] "text23973" "text29998" "text7868"  "text20109"
+##  [1] "text22218" "text12785" "text21257" "text26507" "text7266"  "text4291" 
+##  [7] "text11558" "text2924"  "text28374" "text9899"
 ```
 And now we are ready to preprocess in different ways. Here, we are including n-grams so we are preprocessing the text in 128 different ways. This takes about ten minutes to run on a machine with 8GB RAM. 
 
