@@ -406,28 +406,28 @@ terms(lda_output, 10)
 ```
 
 ```
-##       Topic 1    Topic 2      Topic 3    Topic 4     Topic 5          Topic 6  
-##  [1,] "children" "state"      "percent"  "bush"      "new"            "percent"
-##  [2,] "new"      "new"        "bank"     "campaign"  "high"           "prices" 
-##  [3,] "soviet"   "man"        "million"  "barry"     "administration" "rating" 
-##  [4,] "like"     "government" "year"     "i"         "central"        "new"    
-##  [5,] "years"    "season"     "oil"      "dukakis"   "degrees"        "roberts"
-##  [6,] "city"     "two"        "company"  "moore"     "i"              "year"   
-##  [7,] "nikolais" "florio"     "gas"      "president" "greyhound"      "people" 
-##  [8,] "skins"    "cuban"      "last"     "congress"  "thats"          "waste"  
-##  [9,] "year"     "diplomatic" "peres"    "world"     "farmer"         "months" 
-## [10,] "i"        "embassy"    "official" "asked"     "people"         "rate"   
-##       Topic 7      Topic 8     Topic 9      Topic 10    
-##  [1,] "year"       "soviet"    "i"          "fire"      
-##  [2,] "last"       "noriega"   "new"        "visit"     
-##  [3,] "magellan"   "duracell"  "year"       "warming"   
-##  [4,] "mrs"        "panama"    "dukakis"    "agents"    
-##  [5,] "spacecraft" "union"     "percent"    "global"    
-##  [6,] "study"      "polish"    "california" "leaders"   
-##  [7,] "two"        "president" "national"   "north"     
-##  [8,] "bar"        "company"   "air"        "government"
-##  [9,] "contact"    "friday"    "first"      "summit"    
-## [10,] "i"          "officers"  "people"     "mexico"
+##       Topic 1    Topic 2      Topic 3      Topic 4     Topic 5     Topic 6  
+##  [1,] "fire"     "percent"    "roberts"    "year"      "soviet"    "new"    
+##  [2,] "economic" "i"          "two"        "new"       "bush"      "dukakis"
+##  [3,] "noriega"  "rose"       "people"     "million"   "campaign"  "state"  
+##  [4,] "people"   "peres"      "duracell"   "agents"    "president" "i"      
+##  [5,] "monday"   "warming"    "waste"      "company"   "i"         "year"   
+##  [6,] "panama"   "global"     "police"     "officials" "ms"        "bush"   
+##  [7,] "congress" "mrs"        "thursday"   "percent"   "soviets"   "percent"
+##  [8,] "study"    "production" "i"          "two"       "statement" "rating" 
+##  [9,] "church"   "year"       "magellan"   "people"    "people"    "like"   
+## [10,] "mexico"   "blackowned" "spacecraft" "animals"   "gorbachev" "going"  
+##       Topic 7      Topic 8          Topic 9      Topic 10    
+##  [1,] "officials"  "i"              "percent"    "new"       
+##  [2,] "state"      "people"         "prices"     "bank"      
+##  [3,] "man"        "administration" "union"      "california"
+##  [4,] "north"      "barry"          "new"        "central"   
+##  [5,] "two"        "farmer"         "soviet"     "snow"      
+##  [6,] "united"     "thats"          "greyhound"  "gas"       
+##  [7,] "government" "city"           "government" "england"   
+##  [8,] "national"   "moore"          "price"      "states"    
+##  [9,] "police"     "get"            "news"       "northern"  
+## [10,] "states"     "mayor"          "officers"   "expected"
 ```
 
 We can then use the `tidy()` function from `tidytext` to gather the relevant parameters we've estimated. To get the $\beta$ per-topic-per-word probabilities (i.e., the probability that the given term belongs to a given topic) we can do the following.
@@ -442,18 +442,18 @@ lda_beta %>%
 
 ```
 ## # A tibble: 104,730 × 3
-##    topic term      beta
-##    <int> <chr>    <dbl>
-##  1     6 percent 0.0250
-##  2     3 percent 0.0210
-##  3     4 bush    0.0208
-##  4     8 soviet  0.0161
-##  5     3 bank    0.0154
-##  6     2 state   0.0143
-##  7     2 new     0.0126
-##  8     3 million 0.0125
-##  9     9 i       0.0124
-## 10     3 year    0.0120
+##    topic term         beta
+##    <int> <chr>       <dbl>
+##  1    10 new        0.0206
+##  2     2 percent    0.0198
+##  3    10 bank       0.0196
+##  4     9 percent    0.0185
+##  5     5 soviet     0.0177
+##  6     5 bush       0.0141
+##  7    10 california 0.0127
+##  8     2 i          0.0124
+##  9     9 prices     0.0115
+## 10     8 i          0.0112
 ## # ℹ 104,720 more rows
 ```
 
@@ -471,16 +471,16 @@ lda_gamma %>%
 ## # A tibble: 1,000 × 3
 ##    document topic gamma
 ##       <int> <int> <dbl>
-##  1       76     5 1.000
-##  2       81    10 1.000
-##  3        6     8 1.000
-##  4       43     6 1.000
-##  5       31     6 1.000
-##  6       95     9 1.000
-##  7       77     4 1.000
-##  8       29     8 1.000
-##  9       80     5 1.000
-## 10       57     4 1.000
+##  1       76     8 1.000
+##  2       81     1 1.000
+##  3        6     1 1.000
+##  4       43     3 1.000
+##  5       31     9 1.000
+##  6       95    10 1.000
+##  7       29     9 1.000
+##  8       57     1 1.000
+##  9       25    10 1.000
+## 10       20     3 1.000
 ## # ℹ 990 more rows
 ```
 

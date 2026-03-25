@@ -35,12 +35,12 @@ head(happyn)
 ## # Groups:   week, student [1]
 ##    week student word  happy
 ##   <int>   <int> <chr> <int>
-## 1     1      16 lorem     0
-## 2     1      16 ipsum     0
-## 3     1      16 dolor     0
-## 4     1      16 sit       0
-## 5     1      16 amet      0
-## 6     1      16 justo     0
+## 1     1      13 lorem     0
+## 2     1      13 ipsum     0
+## 3     1      13 dolor     0
+## 4     1      13 sit       0
+## 5     1      13 amet      0
+## 6     1      13 felis     0
 ```
 
 ``` r
@@ -52,12 +52,12 @@ head(happyu)
 ## # Groups:   week, student [1]
 ##    week student word  happy
 ##   <int>   <int> <chr> <int>
-## 1     1      16 lorem     0
-## 2     1      16 ipsum     0
-## 3     1      16 dolor     0
-## 4     1      16 sit       0
-## 5     1      16 amet      0
-## 6     1      16 justo     0
+## 1     1      13 lorem     0
+## 2     1      13 ipsum     0
+## 3     1      13 dolor     0
+## 4     1      13 sit       0
+## 5     1      13 amet      0
+## 6     1      13 felis     0
 ```
 
 ``` r
@@ -69,12 +69,12 @@ head(happyd)
 ## # Groups:   week, student [1]
 ##    week student word  happy
 ##   <int>   <int> <chr> <int>
-## 1     1      16 lorem     0
-## 2     1      16 ipsum     0
-## 3     1      16 dolor     0
-## 4     1      16 sit       0
-## 5     1      16 amet      0
-## 6     1      16 justo     0
+## 1     1      13 lorem     0
+## 2     1      13 ipsum     0
+## 3     1      13 dolor     0
+## 4     1      13 sit       0
+## 5     1      13 amet      0
+## 6     1      13 felis     0
 ```
 
 We can then see the trend in "happy" words over by week and student.
@@ -168,12 +168,12 @@ head(happylipsumn)
 ## # Groups:   week, student [1]
 ##    week student word  happy
 ##   <int>   <int> <chr> <int>
-## 1     1      16 lorem     0
-## 2     1      16 ipsum     0
-## 3     1      16 dolor     0
-## 4     1      16 sit       0
-## 5     1      16 amet      0
-## 6     1      16 sed       0
+## 1     1      13 lorem     0
+## 2     1      13 ipsum     0
+## 3     1      13 dolor     0
+## 4     1      13 sit       0
+## 5     1      13 amet      0
+## 6     1      13 leo       0
 ```
 
 ``` r
@@ -183,14 +183,14 @@ head(happylipsumu)
 ```
 ## # A tibble: 6 × 4
 ## # Groups:   week, student [1]
-##    week student word   happy
-##   <int>   <int> <chr>  <int>
-## 1     1      16 lorem      0
-## 2     1      16 ipsum      0
-## 3     1      16 dolor      0
-## 4     1      16 sit        0
-## 5     1      16 amet       0
-## 6     1      16 turpis     0
+##    week student word  happy
+##   <int>   <int> <chr> <int>
+## 1     1      13 lorem     0
+## 2     1      13 ipsum     0
+## 3     1      13 dolor     0
+## 4     1      13 sit       0
+## 5     1      13 amet      0
+## 6     1      13 duis      0
 ```
 
 ``` r
@@ -200,14 +200,14 @@ head(happylipsumd)
 ```
 ## # A tibble: 6 × 4
 ## # Groups:   week, student [1]
-##    week student word    happy
-##   <int>   <int> <chr>   <int>
-## 1     1      16 lorem       0
-## 2     1      16 ipsum       0
-## 3     1      16 dolor       0
-## 4     1      16 sit         0
-## 5     1      16 amet        0
-## 6     1      16 posuere     0
+##    week student word      happy
+##   <int>   <int> <chr>     <int>
+## 1     1      13 lorem         0
+## 2     1      13 ipsum         0
+## 3     1      13 dolor         0
+## 4     1      13 sit           0
+## 5     1      13 amet          0
+## 6     1      13 facilisis     0
 ```
 
 Then if we plot the number of happy words *divided* by the number of total words each week for each student in each of these datasets, we get the below. 
@@ -248,16 +248,16 @@ happylipsumn %>%
 ## # Groups:   week, student [300]
 ##     week student sum_hap index_total prop_hap
 ##    <int>   <int>   <int>       <int>    <dbl>
-##  1     1       1    1088        5529    0.197
-##  2     1       2     640        3443    0.186
-##  3     1       3     603        3007    0.201
-##  4     1       4     803        3280    0.245
-##  5     1       5     998        3846    0.259
-##  6     1       6     772        3594    0.215
-##  7     1       7     806        3165    0.255
-##  8     1       8     914        4123    0.222
-##  9     1       9    1000        4270    0.234
-## 10     1      10     950        3675    0.259
+##  1     1       1     764        4380    0.174
+##  2     1       2     750        3596    0.209
+##  3     1       3    1142        4745    0.241
+##  4     1       4     541        3102    0.174
+##  5     1       5     991        4508    0.220
+##  6     1       6    1035        4252    0.243
+##  7     1       7     703        4000    0.176
+##  8     1       8     715        3477    0.206
+##  9     1       9     974        4408    0.221
+## 10     1      10     662        2974    0.223
 ## # ℹ 290 more rows
 ```
 
